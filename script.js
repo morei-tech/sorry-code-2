@@ -14,7 +14,7 @@
 const SONGS = [
   {
     title: "Bin Tere",
-    file: "Bin Tere | Hate Luv Storys 128 Kbps.mp3"
+    file: "song1.mp3"
   }
 ];
 
