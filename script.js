@@ -42,13 +42,23 @@ function showScreen(index, direction = "next") {
   spawnHearts(6);
 }
 
-function currentScreen() {
-  return screens.findIndex(s => s.classList.contains("active"));
-}
-
 document.querySelectorAll("[data-next]").forEach(btn => {
   btn.addEventListener("click", async () => {
     const next = currentScreen() + 1;
+
+    // Move to the next page FIRST
+    showScreen(next);
+
+    // Try to start music, but NEVER let music stop navigation
+    if (!musicStarted) {
+      try {
+        await startMusic();
+      } catch (err) {
+        console.log("Music could not start:", err);
+      }
+    }
+  });
+});
     if (!musicStarted) await startMusic();
     showScreen(next);
   });
