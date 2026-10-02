@@ -78,7 +78,8 @@ const meterBear = document.getElementById("meterBear");
 
 let forgiveness = 11;
 
-forgiveBtn.addEventListener("click", () => {
+if (forgiveBtn) {
+  forgiveBtn.addEventListener("click", () => {
   forgiveness = Math.min(100, forgiveness + Math.floor(Math.random() * 9) + 5);
   progressFill.style.width = forgiveness + "%";
   percent.textContent = `${forgiveness}% FORGIVEN`;
