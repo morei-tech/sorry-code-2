@@ -623,14 +623,18 @@ h2 {
 .newspaper-screen {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   padding: 0;
   background: #ffffff;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   overflow-x: hidden;
+}
+
+/* Keep the newspaper hidden until it is the active screen. */
+.screen.newspaper-screen:not(.active) {
+  display: none !important;
 }
 
 .newspaper-image {
