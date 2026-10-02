@@ -594,15 +594,19 @@ h2 {
 }
 
 .hero-bear {
-  width: 118px;
-  height: 118px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .large-bear {
   width: 155px;
   height: 155px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
   margin-top: 11vh;
   animation: float 3.2s ease-in-out infinite;
 }
