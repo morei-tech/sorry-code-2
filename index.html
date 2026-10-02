@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f9dfe9" />
+  <meta name="description" content="A little sorry card made with love." />
+  <title>I'm Sorry ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="hearts" class="hearts" aria-hidden="true"></div>
+
+  <main id="app">
+    <!-- 1. OPENING -->
+    <section class="screen active" id="screen-0">
+      <div class="orb">
+        <span class="mini-heart">♥</span>
+        <img class="bear-img hero-bear" src="assets/crying-bear.png" alt="crying teddy bear" />
+      </div>
+
+      <div class="speech">I'm sorry. Please forgive me 💗</div>
+      <h1>I Messed Up, Vaishnavi</h1>
+      <div class="sad">🥺</div>
+      <p class="subtitle">But I'm ready to make it right.<br />Will you hear me out?</p>
+
+      <button class="primary" data-next>
+        Listen to my heart <span>💌</span>
+      </button>
+    </section>
+
+    <!-- 2. I KNOW -->
+    <section class="screen" id="screen-1">
+      <img class="bear-img large-bear" src="assets/crying-bear.png" alt="crying teddy bear" />
+      <h2>I Know I Hurt You</h2>
+
+      <div class="bottom-card">
+        <div class="handle"></div>
+        <p>I messed up... and I'm really sorry for that.</p>
+        <div class="nav-row">
+          <button class="secondary" data-prev>← Back</button>
+          <button class="primary small" data-next>Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TRULY SORRY -->
+    <section class="screen" id="screen-2">
+      <div class="heart-cloud">
+        <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+      </div>
+      <img class="bear-img large-bear" src="assets/crying-bear.png" alt="teddy bear" />
+      <h2>I'm Truly Sorry</h2>
+
+      <div class="bottom-card">
+        <div class="handle"></div>
+        <p>Please forgive me... You mean so much to me.</p>
+        <div class="nav-row">
+          <button class="secondary" data-prev>← Back</button>
+          <button class="primary small" data-next>Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. NEWSPAPER PAGE -->
+    <section class="screen newspaper-screen" id="screen-3">
+      <button class="back-link newspaper-back" data-prev>← Back</button>
+
+      <!-- This is the exact newspaper image supplied for the website. -->
+      <img
+        class="newspaper-image"
+        src="ok2.png"
+        alt="The Chutki Times — Get Well Soon message"
+      />
+
+      <button class="primary newspaper-next" data-next>Continue →</button>
+    </section>
+
+    <!-- 5. FORGIVENESS -->
+    <section class="screen forgiveness-screen" id="screen-4">
+      <div class="forgive-card">
+        <h2>FORGIVENESS METER</h2>
+        <div id="meterBear" class="meter-bear">🥺</div>
+        <div class="meter-label">SORRY NA 🥺</div>
+
+        <div class="progress">
+          <div id="progressFill"></div>
+        </div>
+        <strong id="percent">11% FORGIVEN</strong>
+        <p class="tap-hint">TAP THE HEART TO HEAL MY HEART 💗</p>
+
+        <button id="forgiveBtn" class="heart-button" aria-label="Forgive me">
+          <span>♥</span>
+        </button>
+
+        <div class="nav-row meter-nav">
+          <button class="secondary" data-prev>← Back</button>
+          <button class="primary small" data-next>Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. GIFTS -->
+    <section class="screen gifts-screen" id="screen-5">
+      <button class="back-link" data-prev>← Back</button>
+      <div class="gifts-title">🎁 VIRTUAL GIFTS FOR YOU ❤️</div>
+
+      <div class="gift-grid">
+        <button class="gift">
+          <span>🤗</span>
+          <small>Aao lag jao gale</small>
+        </button>
+        <button class="gift">
+          <span>🧸🍓</span>
+          <small>I love you berry much</small>
+        </button>
+        <button class="gift wide">
+          <span>⭐🌸</span>
+          <small>Flowers for my sweetheart!</small>
+        </button>
+      </div>
+
+      <div class="peace-card">
+        <div class="peace-icon">🤝</div>
+        <h2>PEACE TREATY<br />SIGNED!</h2>
+        <div class="ahead">NEW BEGINNINGS AHEAD</div>
+        <p>
+          Thank you for being the most forgiving and wonderful person.
+          I love you to the moon and back and I'm never letting go! 💚🙏
+        </p>
+        <div class="hearts-line">❤️ ❤️ ❤️ ❤️ ❤️</div>
+      </div>
+
+      <button class="primary" data-next>Continue ❤️</button>
+    </section>
+
+    <!-- 7. CUSTOM ENDING: NO MOONLINKY CTA -->
+    <section class="screen final-screen" id="screen-6">
+      <div class="final-particles" aria-hidden="true">♡　♥　♡　♥　♡</div>
+      <div class="final-teddy">🧸</div>
+      <div class="final-heart">❤️</div>
+      <h2>Get Well Soon</h2>
+      <p>And please don't stay angry with me for too long. 🥺</p>
+      <p class="forever">I love you. Always.</p>
+
+      <div class="music-pill" id="musicStatus">♫ Your song is playing</div>
+      <button id="restart" class="secondary restart">Read it again ↻</button>
+    </section>
+  </main>
+
+  <!-- Music -->
+  <audio id="audio" preload="auto"></audio>
+  <div id="musicPlayer" class="music-player">
+    <button id="musicToggle" aria-label="Play or pause music">▶</button>
+    <div class="track-info">
+      <span id="trackName">Your song</span>
+      <span id="trackState">Tap to play</span>
+    </div>
+    <button id="nextSong" aria-label="Next song">›</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
